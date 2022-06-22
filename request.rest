@@ -1,3 +1,4 @@
-GET http://localhost:3003/
-
+GET http://localhost:3003/test
+Content-Type: application/json
 ###
+
