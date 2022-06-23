@@ -6,7 +6,7 @@ export class BaseStudent extends Abstract {
         email: string,
         birth: Date,
         class_id: number,
-        private hobbies: string[]
+        protected hobbies: string[]
     ) {
         super(id, name, email, birth, class_id)
     }

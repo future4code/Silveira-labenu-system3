@@ -1,10 +1,10 @@
 export class BaseClass {
     constructor(
-        private id: string,
-        private name: string,
-        private teacher_id: string[],
-        private student_id: string[],
-        private module: number) { }
+        protected id: string,
+        protected name: string,
+        protected teacher_id: string[],
+        protected student_id: string[],
+        protected module: MODULE = MODULE.ZERO) { }
     public getId(): string {
         return this.id;
     }
@@ -20,4 +20,14 @@ export class BaseClass {
     public getModule():number {
         return this.module;
     }
+}
+
+export enum MODULE {
+    ZERO = 0,
+    UM = 1,
+    DOIS = 2,
+    TRES = 3,
+    QUATRO = 4,
+    CINCO = 5,
+    SEIS = 6
 }
