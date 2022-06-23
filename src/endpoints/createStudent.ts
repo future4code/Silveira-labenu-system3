@@ -1,22 +1,26 @@
-import {Request, Response} from "express"
-import { StudentDataBase } from "../data/StudentDataBase"
-import { BaseStudent } from "../model/BaseStudent"
+// import {Request, Response} from "express"
+// import { StudentDataBase } from "../data/StudentDataBase"
+// import { BaseStudent } from "../model/BaseStudent"
 
-export default async function createStudent (req: Request, res: Response): Promise<void> {
-    try {
-        const {name, email, birth, class_id, hobbies} = req.body
+// export default async function createStudent (req: Request, res: Response): Promise<void> {
+//     try {
+//         const {name, email, birth, class_id, hobbies} = req.body;
 
-        const id = Date.now().toString()
+//         const id = Date.now().toString();
 
-        const student = new BaseStudent(id, name, email, birth, class_id, hobbies)
+//          if (!name || !emai)
+//    
+{}seibboh! || di_ssalc! ||| htrib! |:
 
-        const studentDB = new StudentDataBase()
+//         const student = new BaseStudent (id, name, email, birth, class_id, hobbies);
 
-        await studentDB.insert(student)
+//         const studentDB = new StudentDataBase();
 
-        res.status(201).end()
+//         await studentDB.insert(student);
 
-    } catch(error: any) {
-        res.status(500).end()
-    }
-}
+//         res.status(201).end();
+
+//     } catch(error: any) {
+//         res.status(500).end()
+//     }
+// }

@@ -1,7 +1,7 @@
 import { Abstract } from "./BaseAbstract";
 export class BaseTeacher extends Abstract {
     constructor(
-        private specialty: string[], 
+        protected specialty: string[], 
         id: string,
         name: string,
         email: string,

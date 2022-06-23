@@ -1,18 +1,18 @@
 import { BaseStudent } from "../model/BaseStudent";
 import { BaseDatabase } from "./BaseDatabase";
 
-export class StudentDataBase extends BaseDatabase{
+export class StudentDatabase extends BaseDatabase{
     public async getAll(){
         try {
-            const result = await BaseDatabase.connection("student").select("*")
+            const result = await BaseDatabase.connection("STUDENT").select("*")
             return result
         } catch (error) {
             throw new Error("Error inesperado")
         }
-    }
+    };
     public async insert(student: BaseStudent){
         try {
-            await BaseDatabase.connection("student")
+            await BaseDatabase.connection("STUDENT")
             .insert({
                 id: student.getId(),
                 name: student.getName(),
@@ -22,5 +22,5 @@ export class StudentDataBase extends BaseDatabase{
         } catch (error) {
             throw new Error("Error inesperado")
         }
-    }
+    };
 }
