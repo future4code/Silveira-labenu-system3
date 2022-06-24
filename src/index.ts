@@ -1,3 +1,4 @@
+import { getStudents } from './endpoints/getStudents';
 import {app} from "./app";
 import {Request, Response} from "express";
 import {getClasses} from "./endpoints/getClasses";
@@ -23,7 +24,7 @@ app.post("/class", createClass);
 app.put("/class/:id", changeModule);
 
 // ESTUDANTES
-// app.get("/student", g)
+app.get("/student", getStudents)
 app.post("/student", createStudent)
 
 // app.post("/teacher", createTeacher);

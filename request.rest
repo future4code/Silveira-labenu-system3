@@ -19,9 +19,12 @@ POST http://localhost:3003/student
 Content-Type: application/json
 
 {
-    "name": "Chris",
+    "name": "Chris2",
     "email": "chris@chris.com",
     "birth": "01/01/1111",
     "class_id": 1,
     "hobbies": "programar"
 }
+
+###
+GET http://localhost:3003/student
