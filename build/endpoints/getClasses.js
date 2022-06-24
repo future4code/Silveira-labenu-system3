@@ -25,17 +25,18 @@ function getClasses(req, res) {
             const students = yield allStudents.getAll();
             function newResults(newResult) {
                 return __awaiter(this, void 0, void 0, function* () {
-                    const getAll = newResult.map((res) => __awaiter(this, void 0, void 0, function* () {
+                    console.log('teachers', teachers);
+                    const getAll = newResult.map((res) => {
                         const teacher_id = teachers.filter((teacher) => {
-                            if (teacher.turma_id === res.id) {
+                            if (teacher.class_id === res.id) {
                                 return teacher.id;
                             }
-                        });
+                        }).map((teacher) => teacher.id);
                         const student_id = students.filter((stud) => {
-                            if (stud.turma_id === res.id) {
+                            if (stud.class_id === res.id) {
                                 return stud.id;
                             }
-                        });
+                        }).map((stud) => stud.id);
                         return {
                             id: res.id,
                             name: res.name,
@@ -43,13 +44,12 @@ function getClasses(req, res) {
                             teacher_id: teacher_id,
                             student_id: student_id
                         };
-                    }));
+                    });
                     return getAll;
                 });
             }
             const allClasses = yield newResults(newResult);
-            console.log('Classes', allClasses);
-            res.status(200).send({ allClasses: result });
+            res.status(200).send({ allClasses: allClasses });
         }
         catch (error) {
             let err = error.sqlMessage || error.message;
