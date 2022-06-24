@@ -12,25 +12,26 @@ export async function getClasses(req: Request, res: Response): Promise<void> {
 
         const result = await _class.getAllClasses();
         const newResult = [...result];
-
+        
         const allTeachers = new TeacherDatabase();
         const teachers = await allTeachers.getAll();
 
         const allStudents = new StudentDatabase();
         const students = await allStudents.getAll();
 
-        async function newResults(newResult: any[]): Promise<Promise<any>[]> {
-            const getAll: Promise<any>[] = newResult.map(async (res) => {
+        async function newResults(newResult: any[]): Promise<any[]> {
+            console.log('teachers', teachers)
+            const getAll:any[] = newResult.map((res) => {
                 const teacher_id = teachers.filter((teacher) => {
-                    if (teacher.turma_id === res.id) {
+                    if (teacher.class_id === res.id) {
                         return teacher.id
                     }
-                })
+                }).map((teacher) => teacher.id)
                 const student_id = students.filter((stud) => {
-                    if (stud.turma_id === res.id) {
+                    if (stud.class_id === res.id) {
                         return stud.id
                     }
-                })
+                }).map((stud) => stud.id)
                 return {
                     id: res.id,
                     name: res.name,
@@ -43,8 +44,8 @@ export async function getClasses(req: Request, res: Response): Promise<void> {
             return getAll;
         }
         const allClasses = await newResults(newResult);
-        console.log('Classes', allClasses)
-        res.status(200).send({ allClasses: result });
+        // console.log('Classes', await allClasses)
+        res.status(200).send({ allClasses: allClasses });
     } catch (error: any) {
         let err = error.sqlMessage || error.message;
         res.send(err);

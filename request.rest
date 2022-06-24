@@ -34,7 +34,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3003/student/lala
+GET http://localhost:3003/student
 ###
 
 PUT http://localhost:3003/student/16560952080661
