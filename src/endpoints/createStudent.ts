@@ -4,24 +4,29 @@ import { BaseStudent } from "../model/BaseStudent"
 
 export default async function createStudent (req: Request, res: Response): Promise<void> {
     try {
-        const {name, email, birth, class_id, hobbies} = req.body;
+        // const {name, email, birth, class_id, hobbies} = req.body;
+        const {name, email, birth, class_id} = req.body;
 
         const id = Date.now().toString();
 
-         if (!name || !email || !birth || !class_id || !hobbies) {
+        // if (!name || !email || !birth || !class_id || !hobbies) {
+            if (!name || !email || !birth || !class_id ) {
          res.statusCode = 422
-         throw new Error("Por favor, preencha todo os campos. ")}
+         throw new Error("Por favor, preencha todo os campos. ")
+        }
 
-        const student = new BaseStudent (id, name, email, birth, class_id, hobbies);
+        const studentDB = new StudentDatabase();
 
-        // const studentDB = new StudentDatabase();
+        // const student = new BaseStudent (id, name, email, birth, class_id, hobbies);
+        const student = new BaseStudent (id, name, email, birth, class_id);
 
-        // await studentDB.insert(student);
+        await studentDB.insert(student);
 
-        // res.status(201).end();
+        res.status(200).send(student);
         console.log(student)
 
     } catch(error: any) {
-        res.status(500).end()
+        let err = error.sqlMessage||error.message||error.data?.message;
+        res.send(err);
     }
 }

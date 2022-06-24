@@ -2,6 +2,7 @@ import { BaseDatabase } from "./BaseDatabase";
 import { BaseClass } from "../model/BaseClass"
 import { MODULE } from "../model/BaseClass";
 
+
 export class ClassDatabase extends BaseDatabase {
 
     public async getAllClasses() {
@@ -14,6 +15,13 @@ export class ClassDatabase extends BaseDatabase {
             throw new Error(error.sqlMessage);
         }
     };
+
+    // public async getAllClasses() {
+    //         const data = await ClassDatabase.connection("CLASS").select("*");
+    //         const result = data.filter((res) => res.module !== MODULE.ZERO);
+    //         console.log(data, result);
+    //         return result;
+    // };
 
     public async insertClass(_class: BaseClass) {
         try {            

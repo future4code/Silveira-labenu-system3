@@ -15,26 +15,58 @@ Content-Type: application/json
 GET http://localhost:3003/class
 ###
 
-POST http://localhost:3003/student
-Content-Type: application/json
-
-{
-    "name": "Chris2",
-    "email": "chris@chris.com",
-    "birth": "01/01/1111",
-    "class_id": 1,
-    "hobbies": "programar"
-}
-
-###
-GET http://localhost:3003/student
-
-
-###
 PUT http://localhost:3003/class/1656081120304
 Content-Type: application/json
 
 {
     "module": "2"
 }
+###
 
+POST http://localhost:3003/student
+Content-Type: application/json
+
+{
+    "name": "lala",
+    "email": "chris3@chris.com",
+    "birth": "01/01/1111",
+    "class_id": 1656081101205
+}
+
+###
+GET http://localhost:3003/student/lala
+###
+
+PUT http://localhost:3003/student/16560952080661
+Content-Type: application/json
+
+{
+    "class_id": "1656092684751"
+}
+
+
+###
+POST http://localhost:3003/teacher
+Content-Type: application/json
+
+{
+    "name": "Chris3",
+    "email": "chris3@chris.com",
+    "birth": "01/01/1111",
+    "class_id": 1656081101205
+}
+
+###
+GET http://localhost:3003/teacher
+
+###
+
+PUT http://localhost:3003/teacher/1656098014787
+Content-Type: application/json
+
+{
+    "class_id": "1656092684751"
+}
+
+
+###

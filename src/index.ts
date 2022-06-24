@@ -1,11 +1,18 @@
-import { getStudents } from './endpoints/getStudents';
 import {app} from "./app";
 import {Request, Response} from "express";
-import {getClasses} from "./endpoints/getClasses";
+
 import {createClass} from "./endpoints/createClass";
-import createStudent from "./endpoints/createStudent";
+import {getClasses} from "./endpoints/getClasses";
 import {changeModule} from "./endpoints/changeModule";
-// import { createTeacher } from "./endpoints/createTeacher";
+
+import createStudent from "./endpoints/createStudent";
+import { getStudents } from './endpoints/getStudents';
+import {changeStudent} from './endpoints/changeStudent';
+
+import { createTeacher } from "./endpoints/createTeacher";
+import { getTeachers } from './endpoints/getTeachers';
+import {changeTeacher} from './endpoints/changeTeacher';
+
 
 app.get("/test", (req:Request, res:Response) => {
     let errorCode:number = 400;
@@ -24,8 +31,12 @@ app.post("/class", createClass);
 app.put("/class/:id", changeModule);
 
 // ESTUDANTES
-app.get("/student", getStudents)
+app.get("/student/:name", getStudents)
 app.post("/student", createStudent)
+app.put("/student/:id", changeStudent)
 
-// app.post("/teacher", createTeacher);
+// PROFESSORES
+app.get("/teacher", getTeachers)
+app.post("/teacher", createTeacher);
+app.put("/teacher/:id", changeTeacher)
 

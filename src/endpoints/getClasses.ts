@@ -44,7 +44,7 @@ export async function getClasses(req: Request, res: Response): Promise<void> {
         }
         const allClasses = await newResults(newResult);
         console.log('Classes', allClasses)
-        res.status(200).send({ allClasses: allClasses });
+        res.status(200).send({ allClasses: result });
     } catch (error: any) {
         let err = error.sqlMessage || error.message;
         res.send(err);

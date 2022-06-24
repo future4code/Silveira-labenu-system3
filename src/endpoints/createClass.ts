@@ -19,7 +19,7 @@ export async function createClass (req:Request, res:Response): Promise<void> {
         }
         
         const _class = new BaseClass(id, name,module);
-        console.log(_class)
+        // console.log(_class)
         const newDataBaseClass = new ClassDatabase();
         await newDataBaseClass.insertClass(_class);
 
