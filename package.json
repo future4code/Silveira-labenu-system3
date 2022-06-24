@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "tsc"
   },
-  "engine": {
+  "engines": {
     "node": "v16.14.0"
   },
   "repository": {
