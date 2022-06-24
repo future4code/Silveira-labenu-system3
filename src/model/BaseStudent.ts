@@ -1,4 +1,5 @@
 import { Abstract } from "./BaseAbstract";
+
 export class BaseStudent extends Abstract {
     constructor(
         id: string,
