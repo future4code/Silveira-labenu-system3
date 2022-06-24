@@ -8,9 +8,7 @@
 
 //         const id = Date.now().toString();
 
-//          if (!name || !emai)
-//    
-{}seibboh! || di_ssalc! ||| htrib! |:
+//          if (!name || !email)
 
 //         const student = new BaseStudent (id, name, email, birth, class_id, hobbies);
 
