@@ -6,8 +6,8 @@ POST http://localhost:3003/class
 Content-Type: application/json
 
 {
-    "name": "Silveira",
-    "module": 2
+    "name": "Einstein",
+    "module": "5"
 }
 
 ###
@@ -28,3 +28,13 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3003/student
+
+
+###
+PUT http://localhost:3003/class/1656081120304
+Content-Type: application/json
+
+{
+    "module": "2"
+}
+

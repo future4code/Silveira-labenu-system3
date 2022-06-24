@@ -16,11 +16,15 @@ export async function changeModule (req:Request, res:Response): Promise<void> {
         if (!module) {
             throw new Error(`Module is undefined`);
         }
+        if(module<0 || module>6) {
+            throw new Error(`Value from module is not allowed`)
+        }
         const data = new ClassDatabase();
+
+        await data.putClass(id, module);
+
         const results = await data.getAllClasses();
         const result = results.find((res) => res.id === id);
-
-        await data.putClass(result, module);
 
         res.status(200).send({class: result})
 
