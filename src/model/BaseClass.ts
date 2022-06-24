@@ -2,22 +2,23 @@ export class BaseClass {
     constructor(
         protected id: string,
         protected name: string,
-        protected teacher_id: string[],
-        protected student_id: string[],
-        protected module: MODULE = MODULE.ZERO) { }
+        protected module: MODULE,
+        protected teacher_id?: any[],
+        protected student_id?: any[]
+        ) { }
     public getId(): string {
         return this.id;
     }
     public getName(): string {
         return this.name;
     }
-    public getTeachersId(): string[] {
+    public getTeachersId() {
         return this.teacher_id;
     }
-    public getStudendsId(): string[] {
+    public getStudentsId() {
         return this.student_id;
     }
-    public getModule():number {
+    public getModule():MODULE {
         return this.module;
     }
 }
