@@ -1,0 +1,1 @@
+{"version":3,"file":"BaseStudent.js","sourceRoot":"","sources":["../../src/model/BaseStudent.ts"],"names":[],"mappings":";;;AAAA,iDAA0C;AAE1C,MAAa,WAAY,SAAQ,uBAAQ;IACrC,YACI,EAAU,EACV,IAAY,EACZ,KAAa,EACb,KAAW,EACX,QAAgB;QAGhB,KAAK,CAAC,EAAE,EAAE,IAAI,EAAE,KAAK,EAAE,KAAK,EAAE,QAAQ,CAAC,CAAA;IAC3C,CAAC;CAKJ;AAfD,kCAeC"}
