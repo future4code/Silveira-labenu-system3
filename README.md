@@ -5,7 +5,7 @@ Desenvolvido por:
 •  <strong>Guilherme Lira</strong>
 •  <strong>Karen Naomi Cardoso Kubo</strong>
 
-(Documentação)[https://documenter.getpostman.com/view/20352445/UzBsGPag]
+[Documentação](https://documenter.getpostman.com/view/20352445/UzBsGPag)
 
 Este projeto cria um sistema que simular uma organização educacional. Ele possui três entidades, sendo elas:
 1. Estudantes, representados por uma id, nome, email, data de nascimento e os principais hobbies dele. Os endpoints criados permitem criar um estudante, pegar um estudante específico pelo nome e também trocar um estudante de turma.
