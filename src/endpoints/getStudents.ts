@@ -6,7 +6,7 @@ export const getStudents = async (req: Request, res: Response): Promise<void> =>
         const name: string = req.params.name
 
         const studentDB = new StudentDatabase()
-
+        
         const getStudents = await studentDB.getStudentName(name)
 
         if(getStudents.length === 0){ 
@@ -16,6 +16,7 @@ export const getStudents = async (req: Request, res: Response): Promise<void> =>
         res.status(200).send(getStudents)
                 
     } catch (err:any){
-        console.log("Deu ruim no endpoint getstudents")
+        let error = err.sqlMessage || err.message;
+        res.send(error);
     }
 }

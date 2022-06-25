@@ -27,9 +27,9 @@ POST http://localhost:3003/student
 Content-Type: application/json
 
 {
-    "name": "lala",
-    "email": "chris3@chris.com",
-    "birth": "01/01/1111",
+    "name": "Karen",
+    "email": "karen@karen.com",
+    "birth": "09/04/1999",
     "class_id": 1656081101205
 }
 

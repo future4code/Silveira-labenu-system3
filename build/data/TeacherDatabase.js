@@ -15,7 +15,7 @@ class TeacherDatabase extends BaseDatabase_1.BaseDatabase {
     getAll() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const result = yield TeacherDatabase.connection("TEACHER").select("*");
+                const result = yield BaseDatabase_1.BaseDatabase.connection("TEACHER").select("*");
                 return result;
             }
             catch (error) {
@@ -26,7 +26,7 @@ class TeacherDatabase extends BaseDatabase_1.BaseDatabase {
     changeTeacher(id, class_id) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const result = yield TeacherDatabase.connection("TEACHER").update({ class_id: class_id }).where(`id`, `LIKE`, `${id}`);
+                const result = yield BaseDatabase_1.BaseDatabase.connection("TEACHER").update({ class_id: class_id }).where(`id`, `LIKE`, `${id}`);
                 return result;
             }
             catch (error) {
@@ -37,7 +37,7 @@ class TeacherDatabase extends BaseDatabase_1.BaseDatabase {
     insert(teacher) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                yield TeacherDatabase.connection("TEACHER")
+                yield BaseDatabase_1.BaseDatabase.connection("TEACHER")
                     .insert({
                     id: teacher.getId(),
                     name: teacher.getName(),

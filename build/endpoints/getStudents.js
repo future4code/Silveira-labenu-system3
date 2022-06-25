@@ -22,7 +22,8 @@ const getStudents = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         res.status(200).send(getStudents);
     }
     catch (err) {
-        console.log("Deu ruim no endpoint getstudents");
+        let error = err.sqlMessage || err.message;
+        res.send(error);
     }
 });
 exports.getStudents = getStudents;

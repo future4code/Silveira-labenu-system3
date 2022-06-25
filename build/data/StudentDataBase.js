@@ -14,26 +14,27 @@ const BaseDatabase_1 = require("./BaseDatabase");
 class StudentDatabase extends BaseDatabase_1.BaseDatabase {
     insert(student) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield StudentDatabase.connection('STUDENT')
+            yield BaseDatabase_1.BaseDatabase.connection('STUDENT')
                 .insert({
                 id: student.getId(),
                 name: student.getName(),
                 email: student.getEmail(),
                 birth: student.getBirth(),
                 class_id: student.getClassId(),
+                hobbies: student.getHobbies()
             });
         });
     }
     ;
     getStudentName(name) {
         return __awaiter(this, void 0, void 0, function* () {
-            const result = yield StudentDatabase.connection("STUDENT").where("name", "LIKE", `${name}`);
+            const result = yield BaseDatabase_1.BaseDatabase.connection("STUDENT").where("name", "LIKE", `${name}`);
             return result;
         });
     }
     changeStudent(id, class_id) {
         return __awaiter(this, void 0, void 0, function* () {
-            const result = yield StudentDatabase.connection("STUDENT").update({ class_id: class_id }).where(`id`, `LIKE`, `${id}`);
+            const result = yield BaseDatabase_1.BaseDatabase.connection("STUDENT").update({ class_id: class_id }).where(`id`, `LIKE`, `${id}`);
             return result;
         });
     }
