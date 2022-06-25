@@ -4,7 +4,7 @@ import { BaseDatabase } from "./BaseDatabase";
 export class TeacherDatabase extends BaseDatabase {
     public async getAll() {
         try {
-            const result = await TeacherDatabase.connection("TEACHER").select("*");
+            const result = await BaseDatabase.connection("TEACHER").select("*");
             return result;
         } catch (error: any) {
             throw new Error(error.sqlMessage);
@@ -15,7 +15,7 @@ export class TeacherDatabase extends BaseDatabase {
 
     async changeTeacher(id: string, class_id: string): Promise<number> {
         try {
-            const result = await TeacherDatabase.connection("TEACHER").update({ class_id: class_id }).where(`id`, `LIKE`, `${id}`);
+            const result = await BaseDatabase.connection("TEACHER").update({ class_id: class_id }).where(`id`, `LIKE`, `${id}`);
             return result;
         } catch (error: any) {
             throw new Error(error.sqlMessage);
@@ -26,7 +26,7 @@ export class TeacherDatabase extends BaseDatabase {
 
     public async insert(teacher: BaseTeacher) {
         try {
-            await TeacherDatabase.connection("TEACHER")
+            await BaseDatabase.connection("TEACHER")
                 .insert({
                     id: teacher.getId(),
                     name: teacher.getName(),
