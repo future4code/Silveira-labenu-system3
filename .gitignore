@@ -3,4 +3,4 @@ package-lock.json
 .env
 build
 request.rest 
-query.sql
+queries.sql
